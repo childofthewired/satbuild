@@ -1,0 +1,6 @@
+---
+collections:
+  # Install collections from ansible Galaxy
+  - name: theforeman.foreman
+    source: https://galaxy.ansible.com
+    version: *

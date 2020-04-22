@@ -1,0 +1,22 @@
+---
+- name: Playbook that Creates hosts in Satellite using the Ansible Foreman Modules
+  hosts: localhost
+  tasks:
+  - name: Power off the built host
+    theforeman.foreman.foreman_host_power:
+      username: "admin"
+      password: "redhat"
+      server_url: "https://satellite6.testlab.org"
+      hostname: "testy.testlab.org"
+      state: off
+      validate_certs: no
+
+  - name: Delete a host in Satellite6
+    theforeman.foreman.foreman_host:
+      username: "admin"
+      password: "redhat"
+      server_url: "https://satellite6.testlab.org"
+      name: "testy.testlab.org"
+      state: absent
+      validate_certs: no
+      
