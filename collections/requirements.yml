@@ -1,5 +1,0 @@
----
-collections:
-  # Install collections from ansible Galaxy
-  - name: theforeman.foreman
-    version: *
