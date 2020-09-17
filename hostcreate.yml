@@ -1,11 +1,13 @@
 ---
 - name: Playbook that Creates hosts in Satellite using the Ansible Foreman Modules
   hosts: localhost
+  collections:
+   - theforeman.foreman
   vars:
     sat_username: "admin"
     sat_password: "redhat"
     sat_url: "https://satellite6.testlab.org"
-    host_fqdn: 
+    host_fqdn: tester.testlab.org
 
   tasks:
   - name: Create a host in Satellite6
@@ -21,11 +23,11 @@
       validate_certs: no
       build: true
 
-  - name: Power on the built host
-    theforeman.foreman.foreman_host_power:
-      username: "{{ sat_username }}"
-      password: "{{ sat_password }}"
-      server_url: "{{ sat_url }}"
-      hostname: "{{ host_fqdn }}"
-      state: on
-      validate_certs: no
+#  - name: Power on the built host
+#    theforeman.foreman.foreman_host_power:
+#      username: "{{ sat_username }}"
+#      password: "{{ sat_password }}"
+#      server_url: "{{ sat_url }}"
+#      hostname: "{{ host_fqdn }}"
+#      state: on
+#      validate_certs: no
