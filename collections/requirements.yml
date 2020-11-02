@@ -1,4 +1,4 @@
 ---
 collections:
   # Install collections from ansible Galaxy
-- theforeman.foreman
+- redhat.satellite

@@ -9,7 +9,7 @@
 
   tasks:
   - name: Create a host in Satellite6
-    theforeman.foreman.foreman_host:
+    redhat.satellite.host:
       username: "{{ sat_username }}"
       password: "{{ sat_password }}"
       server_url: "{{ sat_url }}"
@@ -22,7 +22,7 @@
       build: true
 
   - name: Power on the built host
-    theforeman.foreman.foreman_host_power:
+    redhat.satellite.host_power:
       username: "{{ sat_username }}"
       password: "{{ sat_password }}"
       server_url: "{{ sat_url }}"
